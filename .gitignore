@@ -1,2 +1,5 @@
 *.dat
 results/
+
+# spacemacs undo tree
+*.~undo-tree~
