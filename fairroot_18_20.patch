@@ -1,0 +1,21 @@
+diff -ruN a/cmake/modules/WriteConfigFile.cmake b/cmake/modules/WriteConfigFile.cmake
+--- a/cmake/modules/WriteConfigFile.cmake
++++ b/cmake/modules/WriteConfigFile.cmake
+@@ -14,7 +14,7 @@
+ 
+   If (INSTALL_TRUE)
+     SET(_INSTALLDIR ${CMAKE_INSTALL_PREFIX})
+-    SET(_BINDIR ${CMAKE_INSTALL_PREFIX}/bin)
++    SET(_BINDIR ${CMAKE_INSTALL_PREFIX})
+ #    SET(VMCWORKDIR ${CMAKE_INSTALL_PREFIX}/share/fairbase)
+     SET(FAIRLIBDIR ${CMAKE_INSTALL_PREFIX}/lib)
+     SET(_LD_LIBRARY_PATH ${FAIRLIBDIR} ${LD_LIBRARY_PATH})
+@@ -157,7 +157,7 @@
+   CONVERT_LIST_TO_STRING(${PYTHONPATH})
+   SET(MY_PYTHONPATH ${output})
+ 
+-  SET (PATH ${ROOTSYS}/bin ${PATH})
++  SET (PATH ${_BINDIR}/bin ${ROOTSYS}/bin ${PATH})
+   UNIQUE(PATH "${PATH}")
+   CONVERT_LIST_TO_STRING(${PATH})
+   Set(MY_PATH ${output})
